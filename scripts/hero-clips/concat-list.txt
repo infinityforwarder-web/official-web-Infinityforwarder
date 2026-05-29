@@ -1,0 +1,4 @@
+file 'd:\Shipment official web\scripts\hero-clips/norm-01-port.mp4'
+file 'd:\Shipment official web\scripts\hero-clips/norm-02-truck.mp4'
+file 'd:\Shipment official web\scripts\hero-clips/norm-03-plane.mp4'
+file 'd:\Shipment official web\scripts\hero-clips/norm-04-warehouse.mp4'
