@@ -6,6 +6,7 @@ import ServicesPage from './pages/ServicesPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 
 function ThemeSync() {
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="services/:slug" element={<ServiceDetailPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
