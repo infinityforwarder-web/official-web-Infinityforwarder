@@ -8,10 +8,13 @@ import FloatingActions from '../FloatingActions';
 import ScrollToTop from '../ScrollToTop';
 import SkipLink from '../SkipLink';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { usePageSeo } from '../../hooks/usePageSeo';
+import StructuredData from '../StructuredData';
 
 export default function Layout() {
   const { pathname } = useLocation();
   useScrollReveal([pathname]);
+  usePageSeo();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,6 +22,7 @@ export default function Layout() {
 
   return (
     <>
+      <StructuredData />
       <SkipLink />
       <Header />
       <MobileHeader />

@@ -62,6 +62,7 @@ export default function Hero() {
             <span /> Active Global Network
           </div>
           <h1>
+            <span className="visually-hidden">{COMPANY.name} — </span>
             <span className="gradient-text">{COMPANY.tagline}</span>
           </h1>
           <p className="hero-description">{COMPANY.description}</p>

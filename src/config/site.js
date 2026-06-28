@@ -23,8 +23,10 @@ export const CONTACT_IMAGES = {
 };
 
 export const COMPANY = {
-  name: 'Infinity Freight Forwarders Pvt Ltd',
+  name: 'Infinity Freight Forwarders Pvt. Ltd.',
+  legalName: 'Infinity Freight Forwarders Pvt. Ltd.',
   shortName: 'Infinity Forwarder',
+  logoPath: '/images/infinity-logo-mark.png',
   tagline: 'Fast. Secure. Worldwide',
   description:
     'Infinity Freight Forwarders Pvt. Ltd. delivers world-class logistics services including Air Freight, Sea Freight, Customs Clearance, Warehousing, and Door-to-Door Cargo Solutions.',
