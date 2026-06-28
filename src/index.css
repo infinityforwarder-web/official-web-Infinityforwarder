@@ -413,12 +413,31 @@ main > section + section {
   text-decoration: none;
 }
 
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  background: transparent;
+  padding: 1px 0;
+}
+
 .logo-img {
-  height: 42px;
+  height: 48px;
   width: auto;
-  max-width: 120px;
+  max-width: 108px;
   object-fit: contain;
-  border-radius: 8px;
+  display: block;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+[data-theme='dark'] .logo-img {
+  filter: none;
 }
 
 .logo-text {
@@ -511,11 +530,18 @@ main > section + section {
 }
 
 .footer-logo .logo-img {
-  height: 48px;
+  height: 52px;
+  max-width: 118px;
+  filter: none;
+}
+
+[data-theme='dark'] .footer-logo .logo-img {
+  filter: none;
 }
 
 .mobile-header .logo-img {
-  height: 36px;
+  height: 40px;
+  max-width: 90px;
 }
 
 .nav-router-link.active {
@@ -1328,6 +1354,7 @@ footer {
 @media (max-width: 767.98px) {
   body {
     padding-bottom: calc(88px + env(safe-area-inset-bottom));
+    --mobile-nav-clearance: calc(96px + env(safe-area-inset-bottom));
   }
 
   #desktop-header {
@@ -1432,8 +1459,8 @@ footer {
   }
 
   .fab-stack {
-    right: 14px;
-    bottom: calc(92px + env(safe-area-inset-bottom));
+    right: 12px;
+    bottom: var(--mobile-nav-clearance, calc(88px + env(safe-area-inset-bottom)));
     gap: 10px;
   }
 
@@ -2324,15 +2351,20 @@ footer {
 }
 
 .mobile-sticky-cta {
-  position: fixed;
-  bottom: calc(88px + env(safe-area-inset-bottom));
-  left: 0;
-  right: 0;
-  padding: 0.75rem 1rem;
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border);
-  z-index: 1025;
-  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+  display: none;
+}
+
+.mobile-sticky-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 8px 22px rgba(14, 165, 233, 0.38);
 }
 
 /* Animated strip (marquee) */
@@ -2445,10 +2477,14 @@ footer {
   .scroll-top-btn {
     left: 14px;
     right: auto;
-    bottom: calc(92px + env(safe-area-inset-bottom));
+    bottom: var(--mobile-nav-clearance, calc(88px + env(safe-area-inset-bottom)));
     width: 48px;
     height: 48px;
     z-index: 1060;
+  }
+
+  body:has(.mobile-sticky-cta) .scroll-top-btn {
+    display: none !important;
   }
 }
 
@@ -2803,10 +2839,81 @@ footer {
   border-color: rgba(14, 165, 233, 0.25);
 }
 
-/* Service detail page bottom padding on mobile */
+/* Service detail — centered quote button above bottom nav */
 @media (max-width: 991.98px) {
+  .mobile-sticky-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 12px;
+    right: 76px;
+    bottom: var(--mobile-nav-clearance, calc(96px + env(safe-area-inset-bottom)));
+    z-index: 1050;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .mobile-sticky-cta-btn {
+    width: auto;
+    min-width: 148px;
+    max-width: min(300px, 100%);
+    pointer-events: auto;
+  }
+
   .site-main:has(.mobile-sticky-cta) {
-    padding-bottom: 60px;
+    padding-bottom: calc(52px + var(--mobile-nav-clearance, 96px));
+  }
+
+  body:has(.mobile-sticky-cta) .fab-stack {
+    bottom: var(--mobile-nav-clearance, calc(96px + env(safe-area-inset-bottom)));
+    right: 12px;
+    z-index: 1060;
+  }
+
+  body:has(.mobile-sticky-cta) .scroll-top-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mobile-sticky-cta {
+    left: 10px;
+    right: 70px;
+    bottom: var(--mobile-nav-clearance);
+  }
+
+  .mobile-sticky-cta-btn {
+    min-height: 46px;
+    font-size: 0.92rem;
+    padding: 0.6rem 1.35rem;
+    min-width: 140px;
+    max-width: min(280px, 100%);
+  }
+
+  body:has(.mobile-sticky-cta) .fab-stack {
+    bottom: var(--mobile-nav-clearance);
+  }
+
+  .site-main:has(.mobile-sticky-cta) {
+    padding-bottom: calc(56px + var(--mobile-nav-clearance));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .mobile-sticky-cta {
+    left: 24px;
+    right: 88px;
+    bottom: calc(18px + env(safe-area-inset-bottom));
+  }
+
+  body:has(.mobile-sticky-cta) .fab-stack {
+    bottom: calc(18px + env(safe-area-inset-bottom));
   }
 }
 

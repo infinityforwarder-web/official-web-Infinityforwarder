@@ -86,8 +86,8 @@ export default function ServiceDetailPage() {
         </Container>
       </section>
       <div className="mobile-sticky-cta d-lg-none">
-        <Link to="/contact" className="btn btn-glow w-100">
-          Get Quote for {service.title}
+        <Link to="/contact" className="btn btn-glow mobile-sticky-cta-btn">
+          Get Quote
         </Link>
       </div>
     </>

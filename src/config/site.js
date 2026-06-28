@@ -1,4 +1,5 @@
-export const LOGO_SRC = '/images/infinity-logo.png';
+export const LOGO_SRC = '/images/infinity-logo-mark.png';
+export const LOGO_SRC_DARK = '/images/infinity-logo-mark-dark.png';
 
 const serviceImage = (slug) => `/images/services/${slug}.jpg`;
 
@@ -54,9 +55,9 @@ export const NAV_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { name: 'LinkedIn', handle: '@infinityforwarder', icon: 'fa-linkedin-in', url: 'https://www.linkedin.com/', brand: '#0a66c2' },
-  { name: 'Facebook', handle: 'Infinity Forwarder', icon: 'fa-facebook-f', url: 'https://www.facebook.com/', brand: '#1877f2' },
-  { name: 'Instagram', handle: '@infinityforwarder', icon: 'fa-instagram', url: 'https://www.instagram.com/', brand: '#e4405f' },
+  { name: 'LinkedIn', handle: '@infinity-forwarder', icon: 'fa-linkedin-in', url: 'https://www.linkedin.com/in/infinity-forwarder-bb469141a?utm_source=share_via&utm_content=profile&utm_medium=member_ios', brand: '#0a66c2' },
+  { name: 'Facebook', handle: 'Infinity Forwarder', icon: 'fa-facebook-f', url: 'https://www.facebook.com/share/1AyYoHEi5b/?mibextid=wwXIfr', brand: '#1877f2' },
+  { name: 'Instagram', handle: '@infinity_forwarder', icon: 'fa-instagram', url: 'https://www.instagram.com/infinity_forwarder?utm_source=qr', brand: '#e4405f' },
 ];
 
 export const SERVICES = [
